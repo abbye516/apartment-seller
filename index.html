@@ -32,14 +32,41 @@
     </div>
 
     <hr>
-
+    
     <div id="results"></div>
-
+    
     <!-- Your Code Here -->
+  <script id="apartments-template" type="text/x-handlebars-template"> 
+        {{#each apartments}}
+        <div class="result">
+            <img src="{{img}}"> 
+            <div class=".address">{{address}}</div>
+            <div class="price">{{price}}</div>
+            <div class="l-price">Price:</div>
+            <div class="l-rooms">Rooms:</div>
+            <div class="rooms">{{rooms}}</div>
+            {{#if parking}}
+            <div class="parking">Parking Availiable!</div>
+            {{/if}}
+            <div class="l-park">Parking:</div>
+            {{#if immediate}}
+            <div>{{contactDetails.name}}: {{contactDetails.email}}</div>
+            {{else}}
+            <div>No parking availiable
+            </div>
+            {{/if}}
+            <div class = "l-addr">Address:</div>
+        </div>
+        {{/each}}  
+    
+    </script> 
+
+    
     <!-- You should start doing handlebar stuff here -->
     <!-- Your Code Here -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="apt-data.js"></script>
     <script src="apt-filter.js"></script>
